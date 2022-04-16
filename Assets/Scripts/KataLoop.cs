@@ -24,7 +24,7 @@ public class KataLoop
 
 public class Node
 {
-    private Node next;
+    public Node next;
 
     public Node GetNExt()
     {
