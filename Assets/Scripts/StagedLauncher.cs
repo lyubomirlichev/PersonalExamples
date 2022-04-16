@@ -92,6 +92,8 @@ public class ExampleStage: MonoBehaviour, ILaunchStage
     public void Init()
     {
         //Some coroutine, callback, or other main thread action
+        //When done, action has to be invoked
+        OnCompleted?.Invoke();
     }
 
     public void Deinit()
