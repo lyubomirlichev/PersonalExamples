@@ -14,7 +14,6 @@ public class CameraControl : MonoBehaviour
          
     void Update ()
     {
-        //Look around with Right Mouse
         if (Input.GetMouseButton(1))
         {
             yaw += lookSpeedH * Input.GetAxis("Mouse X");
@@ -23,7 +22,6 @@ public class CameraControl : MonoBehaviour
             transform.eulerAngles = new Vector3(pitch, yaw, 0f);
         }
 
-        //drag camera around with Middle Mouse
         if (Input.GetMouseButton(2))
         {
             transform.Translate(-Input.GetAxisRaw("Mouse X") * Time.deltaTime * dragSpeed,
@@ -31,7 +29,6 @@ public class CameraControl : MonoBehaviour
                 0);
         }
 
-        //Zoom in and out with Mouse Wheel
         transform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed, Space.Self);
         transform.Translate(Input.GetAxis("Horizontal") * moveSpeed, 0, 0, Space.Self);
     }
